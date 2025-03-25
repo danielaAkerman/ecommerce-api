@@ -1,0 +1,17 @@
+{
+  "name": "ecommerce-product-features-api",
+  "version": "1.0.0",
+  "description": "REST API for e-commerce product features",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+} 
