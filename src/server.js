@@ -35,8 +35,13 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-  console.log(`API endpoint: http://localhost:${port}/api/product-features`);
-}); 
+// For Vercel deployment
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+    console.log(`API endpoint: http://localhost:${port}/api/product-features`);
+  });
+}
+
+// Export the Express app for Vercel
+module.exports = app; 
